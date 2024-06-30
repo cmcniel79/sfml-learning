@@ -10,12 +10,21 @@ class Game {
 
 	private:
 		void processEvents();
-		void update();
+		void update(sf::Time deltaTime);
 		void render();
+		void handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
 
 	private:
+		const float PlayerSpeed;
+		const sf::Time TimePerFrame;
+
 		sf::RenderWindow mWindow;
 		sf::CircleShape mPlayer;
+
+		bool mIsMovingUp;
+		bool mIsMovingDown;
+		bool mIsMovingLeft;
+		bool mIsMovingRight;
 
 };
 
