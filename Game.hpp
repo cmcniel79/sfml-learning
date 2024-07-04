@@ -13,14 +13,19 @@ class Game {
 		void update(sf::Time deltaTime);
 		void render();
 		void handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
+		void updateStatistics(sf::Time elapsedTime);
 
-	private:
 		const float PlayerSpeed;
 		const sf::Time TimePerFrame;
 
 		sf::RenderWindow mWindow;
-		sf::CircleShape mPlayer;
+		sf::Texture mTexture;
+		sf::Sprite mPlayer;
+		sf::Font mFont;
+		sf::Text mStatisticsText;
+		sf::Time mStatisticsUpdateTime;
 
+		std::size_t mStatisticsNumFrames;
 		bool mIsMovingUp;
 		bool mIsMovingDown;
 		bool mIsMovingLeft;
